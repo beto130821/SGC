@@ -1,0 +1,93 @@
+<section class="containerHeader">
+  <h1>Gestión del Conocimiento</h1>
+
+  <p>Difundimos conocimiento adquirido en los diversos procesos de promoción de la inversión privada entre todos los
+    servidores de la Entidad</p>
+
+
+  <div class="container">
+    <div class="col-md-12">
+      <input type="text" class="homeSearch" placeholder="Buscar documentos">
+      <button class="btn btn-outline-search">Buscar</button>
+    </div>
+  </div>
+
+</section>
+
+<section class="containerPublish">
+
+  <div class="container">
+
+    <h4 class="lastPublish">Últimas publicaciones</h4>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4" style="padding-bottom: 50px;">
+
+      <div *ngFor="let item of listaPublicaciones" class="col last-post">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">{{ item.doc_cod_documento }}</h5>
+            <p class="card-text pDetail">{{ item.doc_tema }}</p>
+            <p class="card-text pDetailFooter">Emitido el miercoles, 7 de junio de 2023</p>
+          </div>
+          <div class="card-footer">
+            <label class="card-link">Descargar archivos</label> <i class="bi bi-download"></i>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="containerMore">
+  <div class="container">
+
+    <h1 class="lastPublish">Más sobre gestión del conocimiento</h1>
+
+    <div class="row row-cols-1 row-cols-md-2 g-4" style="padding-bottom: 50px;">
+      <div class="col">
+        <div class="card h-100">
+          <img src="/assets/img/proinversion.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Misión</h5>
+            <p class="card-text">Promover la inversión privada sostenible con eficiencia, calidad y transparencia en
+              beneficio de la población.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="/assets/img/proinversion.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Visión</h5>
+            <p class="card-text">Ser una agencia reconocida por los inversionistas y por la población como un eficaz
+              aliado estratégico para el desarrollo de inversiones en el Perú.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="containerProinversion">
+  <div class="container">
+    <div class="col-md-12 row">
+      <div class="col-md-4">
+        <img src="/assets/img/proinversionFooter.png" class="card-img-top" alt="...">
+      </div>
+      <div class="col-md-4">
+        <label for="">Sugerencias</label>
+        <br>
+        <a href="#" style="font-size: 13px;">Deja tus sugerencias en este buzón</a>
+      </div>
+      <div class="col-md-4">
+        <label>Contacto</label>
+        <p>Av. Enrique Canaval Moreyra N°150-piso 9</p>
+        <p>San Isidro, Lima 27 - Perú</p>
+        <p>Teléfono: 511 200 1200</p>
+      </div>
+    </div>
+  </div>
+</section>
