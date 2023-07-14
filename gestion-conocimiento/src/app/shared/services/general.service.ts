@@ -6,7 +6,9 @@ import { rutaPrincipal } from 'src/app/constants/rutas';
 import { AutorizacionService } from '../services/autorizacion.service';
 import { environment } from 'src/environments/environments';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+  })
 export class GeneralService {
     urlWebApiPostman: string;
 
@@ -41,5 +43,29 @@ export class GeneralService {
                 retry(1),
                 catchError(this.autorizacionService.errorHandl)
             );
+    }
+
+    consultarDetalle(doc_codigo: string): Observable<any> {
+        const headers: any = new HttpHeaders({
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+        });
+
+        const objeto = {
+            doc_codigo: doc_codigo
+        }
+
+        return this.http.post<any>(environment.serverUrlApi + rutaPrincipal.consultarDetalle, objeto,
+            { headers })
+            .pipe(
+                retry(1),
+                catchError(this.autorizacionService.errorHandl)
+            );
+    }
+
+    getFile(urlFile: string): Promise<any> {
+        return fetch(urlFile, {
+            method: 'GET',
+        });
     }
 }

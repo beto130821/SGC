@@ -1,0 +1,13 @@
+.documentosAdjuntos {
+    border: 1px solid;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.documentosAdjuntosContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}

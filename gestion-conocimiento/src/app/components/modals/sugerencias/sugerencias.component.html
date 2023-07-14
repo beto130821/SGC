@@ -1,0 +1,20 @@
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Sugerencias</h5>
+    <button type="button" class="btn-close" (click)="bsModalRef.hide()" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+    <form>
+        <div class="mb-3">
+            <label for="message-text" class="col-form-label">Serán bienvenidas sus contribuciones para la mejora
+                continua de los mismos</label>
+            <label for="message-text" class="col-form-label">Nombre: Alberto Alcarraz Nuñez</label>
+            <br>
+            <strong>Sugerencia</strong>
+            <textarea class="form-control" id="message-text"></textarea>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="bsModalRef.hide()">Cerrar</button>
+    <button type="button" class="btn btn-primary">Enviar</button>
+</div>

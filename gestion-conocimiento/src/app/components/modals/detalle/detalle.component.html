@@ -1,0 +1,44 @@
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">{{ documento.Doc_cod_documento }}</h5>
+    <button type="button" class="btn-close" (click)="bsModalRef.hide()" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+    <form>
+        <div class="mb-3">
+            <strong>Tipo: </strong> <label for="message-text" class="col-form-label">{{ documento.Tipo_documento_nombre }}</label>
+            <br>
+            <strong>Fecha de emisión: </strong>
+            <label for="message-text" class="col-form-label">{{ doc_fecha }}</label>
+            <br>
+            <strong>Autores: </strong> 
+            <label *ngFor="let item of listaAutores" for="message-text" class="col-form-label">{{ item }}</label>
+            <br>
+            <strong>Dirigído a: </strong>
+            <label *ngFor="let item of listaDirigido" for="message-text" class="col-form-label">{{ item }}</label>
+            <br>
+            <strong>Asunto: </strong> 
+            <label for="message-text" class="col-form-label" style="text-align: justify;">{{ documento.Doc_tema }}</label>
+            <br>
+            <strong>Referencia: </strong> 
+            <label for="message-text" class="col-form-label">{{ referencia }}</label>
+            <br>
+            <strong>Proyectos: </strong>
+            <br>
+            <strong>HTD relacionado: </strong> 
+            <label for="message-text" class="col-form-label">{{ htd_relacionado }}</label>
+            <hr>
+            <strong>Documentos: </strong>
+            <!-- <label for="message-text" class="col-form-label">Nombre: Alberto Alcarraz Nuñez</label> -->
+            <br>
+            <div *ngFor="let item of listaDocumentos" class="col-12 documentosAdjuntos">
+                <div class="documentosAdjuntosContainer">
+                    <label for="message-text" class="col-form-label">{{ item.Doc_adjunto_original }}</label> 
+                    <i (click)="openFile()" class="bi bi-download"></i> 
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="bsModalRef.hide()">Cerrar</button>
+</div>

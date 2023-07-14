@@ -25,12 +25,12 @@
       <div *ngFor="let item of listaPublicaciones" class="col last-post">
         <div class="card h-100">
           <div class="card-body">
-            <h5 class="card-title">{{ item.doc_cod_documento }}</h5>
+            <h5 class="card-title" (click)="consultarDetalle(item.doc_codigo)">{{ item.doc_cod_documento }}</h5>
             <p class="card-text pDetail">{{ item.doc_tema }}</p>
-            <p class="card-text pDetailFooter">Emitido el miercoles, 7 de junio de 2023</p>
+            <p class="card-text pDetailFooter">Emitido el {{ item.doc_fecha | date : 'EEEE, MMMM d, y' }}</p>
           </div>
           <div class="card-footer">
-            <label class="card-link">Descargar archivos</label> <i class="bi bi-download"></i>
+            <label class="card-link">Descargar archivos</label> &nbsp; <i class="bi bi-download"></i>
           </div>
         </div>
       </div>
@@ -80,7 +80,9 @@
       <div class="col-md-4">
         <label for="">Sugerencias</label>
         <br>
-        <a href="#" style="font-size: 13px;">Deja tus sugerencias en este buzón</a>
+        <a (click)="enviarSugerencia()" style="font-size: 13px;">Deja tus sugerencias en este buzón</a>
+
+
       </div>
       <div class="col-md-4">
         <label>Contacto</label>
